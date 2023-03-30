@@ -10,47 +10,9 @@ using namespace std;
 /*Задача 1(с)
 Реализовать чтение заголовков файлов форматов
 PNG: сигнатура и IHDR Chunk*/
-/*
-void readPNG(string fname){
-    ifstream f;//файл f
-    f.open(fname);//открыте файла f
-    struct PNG_IHDR{
-        unsigned int length;//длина блока
-        unsigned int type;//тип блока
-        unsigned int width;//ширина изображения
-        unsigned int height;//высота изображения
-        unsigned char depth;//глубина
-        unsigned char color;//тип цвета
-        unsigned char compression;//метод сжатия
-        unsigned char filter;//фильтр
-        unsigned char interlace;//черезстрочность
-        unsigned int crc;//проверочная сумма
-    };
-    PNG_IHDR pnih;
-    unsigned char sig[];//сигнатура
-    f.read((char*) &sig, sizeof(sig));//
-    f.read((char*) &pnih, sizeof(pnih));//
-    f.close();//закрытие файла f
 
-    cout<<"IHDR("<<dec<<sizeof(pnih)<<" bytes)"<<endl//
-    <<"len "<<pnih.length<<" (true = " <<__builtin_bswap32(pnih.length)/*возвращает байты*//*<<")"<<endl//
-    << "type " << pnih.type <<  " [(char) "
-                << (char)(pnih.type)
-                << (char)(pnih.type >> 8)
-                << (char)(pnih.type >> 16)
-                << (char)(pnih.type >> 24) << "]" << endl
-    << "width   " << (int) pnih.width << " (true = " << __builtin_bswap32(pnih.width) << ")" << endl
-    << "height  " << (int) pnih.height << " (true = " << __builtin_bswap32(pnih.height) << ")" << endl
-    << "depth   " << (int) pnih.depth << endl
-    << "cType   " << (int) pnih.color << endl
-    << "compr   " << (int) pnih.compression << endl
-    << "filter  " << (int) pnih.filter << endl
-    << "interl  " << (int) pnih.interlace << endl
-    << "crc     " << (int) pnih.crc;
 
-    cout<<endl;
-}
-*/
+
 /*Задача 3(С)
 Протабулировать функцию. Начальную и финальную точки, шаг, параметр Ч
 считывать из файла in.txt. Результат записывать в текстовый файл out.txt
