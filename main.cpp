@@ -68,13 +68,15 @@ string comanda(int r){
 }
 
 int main(){
-    string kom[5]{};
-    int k[5]{};
-    float X[5]{};
-    float Y[5]{};
-    std::fstream data;
+    int N;
+    std::ifstream data;
     data.open("data.txt",std::ios::in);
     if(data.is_open()){
+        data>>N;
+        string kom[N]{};
+        int k[N]{};
+        float X[N]{};
+        float Y[N]{};
         for(int u=0;u<5;u++){
             data>>X[u]>>Y[u]>>k[u];
             kom[u]=comanda(k[u]);
